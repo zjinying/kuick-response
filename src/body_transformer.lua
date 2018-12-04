@@ -108,7 +108,7 @@ function _M.transform_json_body(conf, buffered_data)
     end
     v = gsub(v, [[\/]], [[/]]) -- To prevent having double encoded slashes
     if  name == "data" then
-      new_json = cjson.decode('{"data":""}')
+      new_json = cjson_decode('{"data":""}')
       new_json[name] = json_body;
       json_body = new_json;
     else

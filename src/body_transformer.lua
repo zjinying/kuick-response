@@ -91,17 +91,17 @@ function _M.transform_json_body(conf, buffered_data)
   end
 
   -- append new key:value or value to existing key
+  --for _, name, value in iter(conf.append.json) do
+  --  local v = cjson_encode(value)
+  --  if sub(v, 1, 1) == [["]] and sub(v, -1, -1) == [["]] then
+  --    v = gsub(sub(v, 2, -2), [[\"]], [["]]) -- To prevent having double encoded quotes
+  --  end
+  --  v = gsub(v, [[\/]], [[/]]) -- To prevent having double encoded slashes
+  --  json_body[name] = append_value(json_body[name],v)
+  --end
+
+
   for _, name, value in iter(conf.append.json) do
-    local v = cjson_encode(value)
-    if sub(v, 1, 1) == [["]] and sub(v, -1, -1) == [["]] then
-      v = gsub(sub(v, 2, -2), [[\"]], [["]]) -- To prevent having double encoded quotes
-    end
-    v = gsub(v, [[\/]], [[/]]) -- To prevent having double encoded slashes
-    json_body[name] = append_value(json_body[name],v)
-  end
-
-
-  for _, name, value in iter(conf.update.json) do
     local v = cjson_encode(value)
     if sub(v, 1, 1) == [["]] and sub(v, -1, -1) == [["]] then
       v = gsub(sub(v, 2, -2), [[\"]], [["]]) -- To prevent having double encoded quotes

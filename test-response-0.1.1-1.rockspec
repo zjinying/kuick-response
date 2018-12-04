@@ -16,7 +16,9 @@ dependencies = {
 build = {
   type = "builtin",
   modules = {
-    ["kong.plugins.kuick-response.handler"] = "src/handler.lua",
-    ["kong.plugins.kuick-response.schema"] = "src/schema.lua"
+    ["kong.plugins.test-response.handler"] = "src/handler.lua",
+    ["kong.plugins.test-response.schema"] = "src/schema.lua",
+    ["kong.plugins.test-response.body_transformer"] = "src/body_transformer.lua",
+    ["kong.plugins.test-response.header_transformer"] = "src/header_transformer.lua"
   }
 }

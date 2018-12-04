@@ -1,4 +1,4 @@
-package = "kuick-response"
+package = "test-response"
 
 version = "0.1.1-1"
 

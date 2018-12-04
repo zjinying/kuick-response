@@ -3,7 +3,7 @@ return {
     name = "2016-05-04-160000_resp_trans_schema_changes",
     up = function(_, _, factory)
 
-      local plugins, err = factory.plugins:find_all {name = "kuick-response"}
+      local plugins, err = factory.plugins:find_all {name = "test-response"}
       if err then
         return err
       end
@@ -23,7 +23,7 @@ return {
       end
     end,
     down = function(_, _, factory)
-      local plugins, err = factory.plugins:find_all {name = "kuick-response"}
+      local plugins, err = factory.plugins:find_all {name = "test-response"}
       if err then
         return err
       end

@@ -1,6 +1,6 @@
 local BasePlugin = require "kong.plugins.base_plugin"
-local body_filter = require "kong.plugins.response.src.body_transformer"
-local header_filter = require "kong.plugins.response.src.header_transformer"
+local body_filter = require "kong.plugins.test-response.src.body_transformer"
+local header_filter = require "kong.plugins.test-response.src.header_transformer"
 
 local is_body_transform_set = header_filter.is_body_transform_set
 local is_json_body = header_filter.is_json_body
@@ -10,7 +10,7 @@ local ResponseTransformerHandler = BasePlugin:extend()
 
 
 function ResponseTransformerHandler:new()
-  ResponseTransformerHandler.super.new(self, "kuick-response")
+  ResponseTransformerHandler.super.new(self, "test-response")
 end
 
 function ResponseTransformerHandler:header_filter(conf)
